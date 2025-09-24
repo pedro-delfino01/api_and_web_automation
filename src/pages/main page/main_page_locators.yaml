@@ -1,0 +1,5 @@
+header: //header/a[@href="https://demoqa.com"]
+
+form_option: //div[@class="card-body"]/h5[starts-with(text(), 'Forms')]
+alert_option: //div[@class="card-body"]/h5[starts-with(text(), 'Alert')]
+element_option: //div[@class="card-body"]/h5[starts-with(text(), 'Elements')]

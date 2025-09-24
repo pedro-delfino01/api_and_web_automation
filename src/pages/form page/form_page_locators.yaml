@@ -1,0 +1,27 @@
+header: //header/a[@href="https://demoqa.com"]
+
+form_list_locator: //div[@class="element-group"]//div[contains(text(), 'Forms')]/following-sibling::div
+form_practice_locator: //div[@class="element-list collapse show"]/ul/li/span[contains(text(),'Practice Form')]
+
+form_header_locator: //div[@class="practice-form-wrapper"]
+form_content_locator: //form[@id="userForm"]
+
+input_first_name_locator: //input[@id="firstName"]
+input_last_name_locator: //input[@id="lastName"]
+input_email_locator: //input[@id="userEmail"]
+
+input_gender_locator: //input[@name="gender"]
+gender_class_locators: //div[@id="genterWrapper"]/div/div[@class="custom-control custom-radio custom-control-inline"]
+
+input_phone_locator: //input[@id="userNumber"]
+input_date_birth_locator: //input[@id="dateOfBirthInput"]
+input_subject_locator: //input[@id="subjectsInput"]
+
+hobbies_list_locators: //div[@class="custom-control custom-checkbox custom-control-inline"]
+checkbox_hobbies_locator: input[@type="checkbox"]
+input_file_locator: //input[@id="uploadPicture"]
+input_address_locator: //textarea[@id="currentAddress"]
+input_state_locator: //input[@id="react-select-3-input"]
+input_city_locator: //input[@id="react-select-4-input"]
+
+submit_form_locator: //button[@id="submit"]
