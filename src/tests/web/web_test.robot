@@ -6,6 +6,7 @@ Library             SeleniumLibrary
 
 Resource    ../../pages/main page/main_page.robot
 Resource    ../../pages/form page/form_page.robot
+Resource    ../../pages/alert page/alert_page.robot
 
 Variables    ../../../src/resources/data/personal_data.yaml
 
@@ -34,11 +35,23 @@ Alerta
     [Documentation]    Execução de um cadastro de um alerta
     Abrir Navegador
     Selecionar Opção - Alert, Frame & Windows
-
+    Clicar em Browser Windows
+    Validar Página - Alert
+    Clicar em New Window
+    Validar e Trocar de Aba
+    Validar Mensagem na Nova Aba
     [Teardown]    Fechar Navegador
 
 Elementos
     [Documentation]    Execução de um cadastro de um elemento
+    Abrir Navegador
+    Selecionar Opção - Elements
+
+    [Teardown]    Fechar Navegador
+    
+    
+Widgets
+    [Documentation]    Execução de um widget.
     Abrir Navegador
     Selecionar Opção - Elements
 

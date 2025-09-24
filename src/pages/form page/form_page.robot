@@ -2,6 +2,7 @@
 Library    SeleniumLibrary
 Library    String
 Library    DateTime
+Library    OperatingSystem
 Variables           ../../../src/resources/web_variables.yaml
 Variables           ../../../src/pages/form page/form_page_locators.yaml
 
@@ -36,50 +37,73 @@ Inserir E-mail
 Marcar Gênero
     [Arguments]    ${gender}
     Should Be String    ${gender}
-    Click Element    locator
-    Select Radio Button    group_name=gender    value=${gender}
+    ${web_elements_gender}    Get WebElements    locator=${gender_class_locators}
+    FOR    ${web_element}    IN    @{web_elements_gender}
+        Log    ${web_element}
+        ${gender_type}    Get Text    locator=${web_element}
+        IF    $gender == $gender_type
+            Click Element    locator=${web_element}
+            BREAK
+        END
+    END
 
 
 Inserir Telefone
     ${phone}    Generate Random String    length=10    chars=[NUMBERS]
     Wait Until Element Is Visible    locator=${input_phone_locator}
+    Scroll Element Into View    locator=${input_phone_locator}
     Input Text    locator=${input_phone_locator}    text=${phone}
 
+
 Inserir Data de Nascimento
+    ${data}    Get Current Date    result_format=%d %b %Y
+    ${data}    Convert To String    item=${data}
     Wait Until Element Is Visible    locator=${input_date_birth_locator}
-    ${data}    Get Current Date    result_format=%d %b 2000
-    Input Text    locator=${input_date_birth_locator}    text=${data}
+    Execute Javascript    document.getElementById("dateOfBirthInput").setAttribute("value","${data}")
+    ${data_atualizada}    Get Text    locator=${input_date_birth_locator}
+    Should Be Equal As Strings    first=${data}    second=${data_atualizada}
+
 
 Inserir Assunto
     [Arguments]    ${subject}
     Wait Until Element Is Visible    locator=${input_subject_locator}
+    Scroll Element Into View    locator=${input_subject_locator}
     Input Text    locator=${input_subject_locator}    text=${subject}
 
 Marcar Checkbox
     [Arguments]    @{lista_hobbies}
+    Wait Until Element Is Visible    locator=${hobbies_list_locators}
+    Scroll Element Into View    locator=${hobbies_list_locators}
     ${web_elements}    Get WebElements    locator=${hobbies_list_locators}
     FOR    ${element}    IN    @{web_elements}
         ${hobby}    Get Text    locator=${element}
-        IF    '${hobby}' in '${lista_hobbies}'
-            Select Checkbox    locator=${element}/${checkbox_hobbies_locator}
+        IF    $hobby in $lista_hobbies
+            Select Checkbox    locator=${element}
         END
     END
 
 Importar Arquivo
     Wait Until Element Is Visible    locator=${input_file_locator}
-    Choose File    locator=${input_file_locator}    file_path=../../../src/resources/file/upload_file.txt
+    Scroll Element Into View    locator=${input_file_locator}
+    ${normalized_file_path}    Normalize Path    path=${file_path}
+    Choose File    locator=${input_file_locator}    file_path=${normalized_file_path}
     
 Inserir Endereço Atual
     [Arguments]    ${address}
     Wait Until Element Is Visible    locator=${input_address_locator}
+    Scroll Element Into View    locator=${input_address_locator}
     Input Text    locator=${input_address_locator}    text=${address}
 
 Inserir Cidade e Estado
     [Arguments]    ${cidade}    ${estado}
     Wait Until Element Is Visible    locator=${input_state_locator}
-    Input Text    locator=${input_state_locator}    text=${estado}
+    Click Element    locator=${input_state_locator}
+    Sleep    2s
+    # Click Element    xpath=//div[contains(text()="${state}")]
+
     Wait Until Element Is Enabled    locator=${input_city_locator}
-    Input Text    locator=${input_city_locator}    text=${cidade}
+    Select From List By Value    ${input_city_locator}    ${cidade}
+
 
 Enviar Formulário
     Wait Until Element Is Visible    locator=${submit_form_locator}

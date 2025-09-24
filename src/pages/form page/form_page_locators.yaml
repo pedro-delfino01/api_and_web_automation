@@ -11,17 +11,20 @@ input_last_name_locator: //input[@id="lastName"]
 input_email_locator: //input[@id="userEmail"]
 
 input_gender_locator: //input[@name="gender"]
-gender_class_locators: //div[@id="genterWrapper"]/div/div[@class="custom-control custom-radio custom-control-inline"]
+gender_class_locators: //div[@id="genterWrapper"]/div/div[@class="custom-control custom-radio custom-control-inline"]/label
 
 input_phone_locator: //input[@id="userNumber"]
 input_date_birth_locator: //input[@id="dateOfBirthInput"]
 input_subject_locator: //input[@id="subjectsInput"]
 
-hobbies_list_locators: //div[@class="custom-control custom-checkbox custom-control-inline"]
+hobbies_list_locators: //div[@class="custom-control custom-checkbox custom-control-inline"]/label
+
+
 checkbox_hobbies_locator: input[@type="checkbox"]
 input_file_locator: //input[@id="uploadPicture"]
 input_address_locator: //textarea[@id="currentAddress"]
-input_state_locator: //input[@id="react-select-3-input"]
-input_city_locator: //input[@id="react-select-4-input"]
+input_state_locator: //div[@id="state"]
+input_city_locator: //div[@id="city"]
+
 
 submit_form_locator: //button[@id="submit"]

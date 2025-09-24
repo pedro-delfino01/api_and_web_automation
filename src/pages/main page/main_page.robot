@@ -33,4 +33,5 @@ Selecionar Opção - Elements
 #     Click Button    id:submit
 
 Fechar Navegador
+    Capture Page Screenshot
     Close Browser

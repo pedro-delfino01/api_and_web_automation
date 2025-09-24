@@ -1,0 +1,11 @@
+header: //header/a[@href="https://demoqa.com"]
+
+alert_list_locator: //div[@class="element-group"]//div[contains(text(), 'Alert')]/following-sibling::div
+browser_windows_locator: //div[@class="element-list collapse show"]/ul/li/span[contains(text(),'Browser Windows')]
+
+browser_header_locator: //div[@id="browserWindows"]
+
+new_tab_locator: //button[@id="tabButton"]
+new_window_locator: //button[@id="windowButton"]
+new_message_window_locator: //button[@id="messageWindowButton"]
+
