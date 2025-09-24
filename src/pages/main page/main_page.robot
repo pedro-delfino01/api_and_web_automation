@@ -24,13 +24,10 @@ Selecionar Opção - Elements
     Click Element    locator=${element_option}
     Wait Until Element Is Visible    locator=${header}
 
-# Inserir Dados do Form
-#     [Arguments]    ${name}    ${email}
-#     Input Text    id:name    ${name}
-#     Input Text    id:email   ${email}
-
-# Concluir Form
-#     Click Button    id:submit
+Selecionar Opção - Widgets
+    Wait Until Element Is Visible    locator=${element_option}
+    Click Element    locator=${element_option}
+    Wait Until Element Is Visible    locator=${header}
 
 Fechar Navegador
     Capture Page Screenshot

@@ -1,0 +1,23 @@
+header: //header/a[@href="https://demoqa.com"]
+
+element_list_locator: //div[@class="element-group"]//div[contains(text(), 'Elements')]/following-sibling::div
+web_tables_locator: //div[@class="element-list collapse show"]/ul/li/span[contains(text(),'Web Tables')]
+
+web_tables_header_locator: //h1[@class="text-center"]
+
+add_data_locator: //button[@id="addNewRecordButton"]
+
+registration_form_window_locator: //div[@class="modal-content"]
+input_first_name_locator: //input[@id="firstName"]
+input_last_name_locator: //input[@id="lastName"]
+input_email_locator: //input[@id="userEmail"]
+input_age_locator: //input[@id="age"]
+input_salary_locator: //input[@id="salary"]
+input_department_locator: //input[@id="department"]
+
+submit_locator: //input[@id="submit"]
+
+new_tab_locator: //button[@id="tabButton"]
+new_window_locator: //button[@id="windowButton"]
+new_message_window_locator: //button[@id="messageWindowButton"]
+

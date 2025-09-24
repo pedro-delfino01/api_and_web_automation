@@ -7,6 +7,7 @@ Library             SeleniumLibrary
 Resource    ../../pages/main page/main_page.robot
 Resource    ../../pages/form page/form_page.robot
 Resource    ../../pages/alert page/alert_page.robot
+Resource    ../../pages/element page/element_page.robot
 
 Variables    ../../../src/resources/data/personal_data.yaml
 
@@ -53,7 +54,19 @@ Elementos
 Widgets
     [Documentation]    Execução de um widget.
     Abrir Navegador
-    Selecionar Opção - Elements
+    Validar Página - Element
+    Clicar em Web Tables
+    Validar Tela Web Tables
+    Clicar em Adicionar Funcionário
+    Validar Exibição da Tela Registration Form
+    Inserir Primeiro Nome - Web Tables    first_name=Pedro
+    Inserir Último Nome - Web Tables    last_name=Delfino
+    Inserir E-mail - Web Tables    email=pedro.delfino.dev@outlook.com
+    Inserir Idade - Web Tables    age=26
+    Inserir Salario - Web Tables    salary=25000
+    Inserir Departamento - Web Tables    department=IT
+    Enviar Dados do Funcionário
+
 
     [Teardown]    Fechar Navegador
     
