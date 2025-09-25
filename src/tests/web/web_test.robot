@@ -67,7 +67,6 @@ Widgets
     Inserir Departamento - Web Tables    department=IT
     Enviar Dados do Funcionário
 
-
     [Teardown]    Fechar Navegador
     
     
